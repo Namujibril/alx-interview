@@ -4,9 +4,14 @@
 
 
 def island_perimeter(grid):
-    """Computes the perimeter of an island with no lakes.
     """
-    perimeter = 0
+    Computes the perimeter (p) of an island with no lakes.
+    Args:
+        grid: 2d list of integers containing 0(water) or 1(land)
+    Return:
+        the perimeter (p) of the island
+    """
+    p = 0
     if type(grid) != list:
         return 0
     n = len(grid)
@@ -21,5 +26,5 @@ def island_perimeter(grid):
                 i == n - 1 or (len(grid[i + 1]) > j and grid[i + 1][j] == 0),
                 j == 0 or row[j - 1] == 0,
             )
-            perimeter += sum(edges)
-    return perimeter
+            p += sum(edges)
+    return p
